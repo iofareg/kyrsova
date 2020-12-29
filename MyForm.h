@@ -38,33 +38,27 @@ namespace kyrsova {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	protected:
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::DataGridView^ InputDataTable;
+	private: System::Windows::Forms::Button^ ShowDronesButton;
+	private: System::Windows::Forms::Button^ GetDronesButton;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ fileToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ openToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ saveAsTxtToolStripMenuItem;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ sortdist;
-	private: System::Windows::Forms::DataGridView^ dataGridView2;
-	private: System::Windows::Forms::Button^ Altituderange;
-
-	private: System::Windows::Forms::Button^ task4;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
-	private: System::Windows::Forms::Button^ task5button;
-	private: System::Windows::Forms::Button^ removeDrone;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
-	private: System::Windows::Forms::Button^ button6;
-
-
-
-
-
+	private: System::Windows::Forms::ToolStripMenuItem^ FileMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ OpenMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ SaveAsMenuItem;
+	private: System::Windows::Forms::TextBox^ LogBox;
+	private: System::Windows::Forms::Button^ ExitButton;
+	private: System::Windows::Forms::Button^ ClearDataButton;
+	private: System::Windows::Forms::Button^ SortBySpeedButton;
+	private: System::Windows::Forms::Button^ SortByDistanceButton;
+	private: System::Windows::Forms::DataGridView^ OutputDataTable;
+	private: System::Windows::Forms::Button^ SimilarAltitude;
+	private: System::Windows::Forms::Button^ Task4Button;
+	private: System::Windows::Forms::NumericUpDown^ Task3Number;
+	private: System::Windows::Forms::Button^ Task5Button;
+	private: System::Windows::Forms::Button^ RemoveDroneButton;
+	private: System::Windows::Forms::NumericUpDown^ RemoveDroneNumber;
+	private: System::Windows::Forms::Button^ Task2Button;
+	private: System::Windows::Forms::ToolStripMenuItem^ AboutMenuItem;
 
 	private:
 		/// <summary>
@@ -79,269 +73,278 @@ namespace kyrsova {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->InputDataTable = (gcnew System::Windows::Forms::DataGridView());
+			this->ShowDronesButton = (gcnew System::Windows::Forms::Button());
+			this->GetDronesButton = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->saveAsTxtToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->sortdist = (gcnew System::Windows::Forms::Button());
-			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
-			this->Altituderange = (gcnew System::Windows::Forms::Button());
-			this->task4 = (gcnew System::Windows::Forms::Button());
-			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->task5button = (gcnew System::Windows::Forms::Button());
-			this->removeDrone = (gcnew System::Windows::Forms::Button());
-			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->FileMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->OpenMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->SaveAsMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->AboutMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->LogBox = (gcnew System::Windows::Forms::TextBox());
+			this->ExitButton = (gcnew System::Windows::Forms::Button());
+			this->ClearDataButton = (gcnew System::Windows::Forms::Button());
+			this->SortBySpeedButton = (gcnew System::Windows::Forms::Button());
+			this->SortByDistanceButton = (gcnew System::Windows::Forms::Button());
+			this->OutputDataTable = (gcnew System::Windows::Forms::DataGridView());
+			this->SimilarAltitude = (gcnew System::Windows::Forms::Button());
+			this->Task4Button = (gcnew System::Windows::Forms::Button());
+			this->Task3Number = (gcnew System::Windows::Forms::NumericUpDown());
+			this->Task5Button = (gcnew System::Windows::Forms::Button());
+			this->RemoveDroneButton = (gcnew System::Windows::Forms::Button());
+			this->RemoveDroneNumber = (gcnew System::Windows::Forms::NumericUpDown());
+			this->Task2Button = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->InputDataTable))->BeginInit();
 			this->menuStrip1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->OutputDataTable))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Task3Number))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RemoveDroneNumber))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// dataGridView1
+			// InputDataTable
 			// 
-			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->EditMode = System::Windows::Forms::DataGridViewEditMode::EditOnEnter;
-			this->dataGridView1->Location = System::Drawing::Point(314, 30);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(740, 210);
-			this->dataGridView1->TabIndex = 0;
+			this->InputDataTable->AllowUserToDeleteRows = false;
+			this->InputDataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->InputDataTable->EditMode = System::Windows::Forms::DataGridViewEditMode::EditOnEnter;
+			this->InputDataTable->Location = System::Drawing::Point(314, 30);
+			this->InputDataTable->Name = L"InputDataTable";
+			this->InputDataTable->Size = System::Drawing::Size(740, 210);
+			this->InputDataTable->TabIndex = 0;
 			// 
-			// button1
+			// ShowDronesButton
 			// 
-			this->button1->BackColor = System::Drawing::SystemColors::ControlLight;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ShowDronesButton->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->ShowDronesButton->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(10, 30);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(298, 25);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"Show drones";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->ShowDronesButton->Location = System::Drawing::Point(10, 30);
+			this->ShowDronesButton->Name = L"ShowDronesButton";
+			this->ShowDronesButton->Size = System::Drawing::Size(298, 25);
+			this->ShowDronesButton->TabIndex = 1;
+			this->ShowDronesButton->Text = L"Show drones";
+			this->ShowDronesButton->UseVisualStyleBackColor = false;
+			this->ShowDronesButton->Click += gcnew System::EventHandler(this, &MyForm::ShowDronesButton_Click);
 			// 
-			// button2
+			// GetDronesButton
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->button2->Location = System::Drawing::Point(10, 66);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(298, 25);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"Get drones";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			this->GetDronesButton->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->GetDronesButton->Location = System::Drawing::Point(10, 66);
+			this->GetDronesButton->Name = L"GetDronesButton";
+			this->GetDronesButton->Size = System::Drawing::Size(298, 25);
+			this->GetDronesButton->TabIndex = 2;
+			this->GetDronesButton->Text = L"Get drones";
+			this->GetDronesButton->UseVisualStyleBackColor = true;
+			this->GetDronesButton->Click += gcnew System::EventHandler(this, &MyForm::GetDronesButton_Click);
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->fileToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) { this->FileMenuItem, this->AboutMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1066, 24);
 			this->menuStrip1->TabIndex = 3;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// fileToolStripMenuItem
+			// FileMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->openToolStripMenuItem,
-					this->saveAsTxtToolStripMenuItem
+			this->FileMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->OpenMenuItem,
+					this->SaveAsMenuItem
 			});
-			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(35, 20);
-			this->fileToolStripMenuItem->Text = L"file";
+			this->FileMenuItem->Name = L"FileMenuItem";
+			this->FileMenuItem->Size = System::Drawing::Size(37, 20);
+			this->FileMenuItem->Text = L"File";
 			// 
-			// openToolStripMenuItem
+			// OpenMenuItem
 			// 
-			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
-			this->openToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->openToolStripMenuItem->Text = L"Open";
-			this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::openToolStripMenuItem_Click);
+			this->OpenMenuItem->Name = L"OpenMenuItem";
+			this->OpenMenuItem->Size = System::Drawing::Size(180, 22);
+			this->OpenMenuItem->Text = L"Open";
+			this->OpenMenuItem->Click += gcnew System::EventHandler(this, &MyForm::OpenMenuItem_Click);
 			// 
-			// saveAsTxtToolStripMenuItem
+			// SaveAsMenuItem
 			// 
-			this->saveAsTxtToolStripMenuItem->Name = L"saveAsTxtToolStripMenuItem";
-			this->saveAsTxtToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->saveAsTxtToolStripMenuItem->Text = L"Save as";
-			this->saveAsTxtToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::saveAsTxtToolStripMenuItem_Click);
+			this->SaveAsMenuItem->Name = L"SaveAsMenuItem";
+			this->SaveAsMenuItem->Size = System::Drawing::Size(180, 22);
+			this->SaveAsMenuItem->Text = L"Save as";
+			this->SaveAsMenuItem->Click += gcnew System::EventHandler(this, &MyForm::SaveAsMenuItem_Click);
 			// 
-			// textBox1
+			// AboutMenuItem
 			// 
-			this->textBox1->Location = System::Drawing::Point(10, 276);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(298, 198);
-			this->textBox1->TabIndex = 4;
+			this->AboutMenuItem->Name = L"AboutMenuItem";
+			this->AboutMenuItem->Size = System::Drawing::Size(52, 20);
+			this->AboutMenuItem->Text = L"About";
+			this->AboutMenuItem->Click += gcnew System::EventHandler(this, &MyForm::AboutMenuItem_Click);
 			// 
-			// button3
+			// LogBox
 			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->button3->Location = System::Drawing::Point(994, 487);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(60, 25);
-			this->button3->TabIndex = 5;
-			this->button3->Text = L"Exit";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			this->LogBox->Location = System::Drawing::Point(10, 276);
+			this->LogBox->Multiline = true;
+			this->LogBox->Name = L"LogBox";
+			this->LogBox->Size = System::Drawing::Size(298, 198);
+			this->LogBox->TabIndex = 4;
 			// 
-			// button4
+			// ExitButton
 			// 
-			this->button4->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->button4->Location = System::Drawing::Point(10, 487);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(102, 25);
-			this->button4->TabIndex = 6;
-			this->button4->Text = L"Clear all data";
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click_1);
+			this->ExitButton->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->ExitButton->Location = System::Drawing::Point(994, 487);
+			this->ExitButton->Name = L"ExitButton";
+			this->ExitButton->Size = System::Drawing::Size(60, 25);
+			this->ExitButton->TabIndex = 5;
+			this->ExitButton->Text = L"Exit";
+			this->ExitButton->UseVisualStyleBackColor = true;
+			this->ExitButton->Click += gcnew System::EventHandler(this, &MyForm::ExitButton_Click);
 			// 
-			// button5
+			// ClearDataButton
 			// 
-			this->button5->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->button5->Location = System::Drawing::Point(10, 102);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(298, 25);
-			this->button5->TabIndex = 7;
-			this->button5->Text = L"Sort by speed";
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			this->ClearDataButton->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->ClearDataButton->Location = System::Drawing::Point(10, 487);
+			this->ClearDataButton->Name = L"ClearDataButton";
+			this->ClearDataButton->Size = System::Drawing::Size(102, 25);
+			this->ClearDataButton->TabIndex = 6;
+			this->ClearDataButton->Text = L"Clear all data";
+			this->ClearDataButton->UseVisualStyleBackColor = true;
+			this->ClearDataButton->Click += gcnew System::EventHandler(this, &MyForm::ClearDataButton_Click);
 			// 
-			// sortdist
+			// SortBySpeedButton
 			// 
-			this->sortdist->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->sortdist->Location = System::Drawing::Point(10, 138);
-			this->sortdist->Name = L"sortdist";
-			this->sortdist->Size = System::Drawing::Size(298, 25);
-			this->sortdist->TabIndex = 8;
-			this->sortdist->Text = L"Sort by distance";
-			this->sortdist->UseVisualStyleBackColor = true;
-			this->sortdist->Click += gcnew System::EventHandler(this, &MyForm::sortdist_Click);
+			this->SortBySpeedButton->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->SortBySpeedButton->Location = System::Drawing::Point(10, 102);
+			this->SortBySpeedButton->Name = L"SortBySpeedButton";
+			this->SortBySpeedButton->Size = System::Drawing::Size(298, 25);
+			this->SortBySpeedButton->TabIndex = 7;
+			this->SortBySpeedButton->Text = L"Sort by speed";
+			this->SortBySpeedButton->UseVisualStyleBackColor = true;
+			this->SortBySpeedButton->Click += gcnew System::EventHandler(this, &MyForm::SortBySpeedButton_Click);
 			// 
-			// dataGridView2
+			// SortByDistanceButton
 			// 
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->EditMode = System::Windows::Forms::DataGridViewEditMode::EditOnEnter;
-			this->dataGridView2->Location = System::Drawing::Point(314, 276);
-			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->Size = System::Drawing::Size(740, 199);
-			this->dataGridView2->TabIndex = 9;
+			this->SortByDistanceButton->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->SortByDistanceButton->Location = System::Drawing::Point(10, 138);
+			this->SortByDistanceButton->Name = L"SortByDistanceButton";
+			this->SortByDistanceButton->Size = System::Drawing::Size(298, 25);
+			this->SortByDistanceButton->TabIndex = 8;
+			this->SortByDistanceButton->Text = L"Sort by distance";
+			this->SortByDistanceButton->UseVisualStyleBackColor = true;
+			this->SortByDistanceButton->Click += gcnew System::EventHandler(this, &MyForm::SortByDistanceButton_Click);
 			// 
-			// Altituderange
+			// OutputDataTable
 			// 
-			this->Altituderange->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->Altituderange->Location = System::Drawing::Point(314, 246);
-			this->Altituderange->Name = L"Altituderange";
-			this->Altituderange->Size = System::Drawing::Size(298, 25);
-			this->Altituderange->TabIndex = 10;
-			this->Altituderange->Text = L"Show drones with similar altitude as number";
-			this->Altituderange->UseVisualStyleBackColor = true;
-			this->Altituderange->Click += gcnew System::EventHandler(this, &MyForm::Altituderange_Click);
+			this->OutputDataTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->OutputDataTable->EditMode = System::Windows::Forms::DataGridViewEditMode::EditOnEnter;
+			this->OutputDataTable->Location = System::Drawing::Point(314, 276);
+			this->OutputDataTable->Name = L"OutputDataTable";
+			this->OutputDataTable->Size = System::Drawing::Size(740, 199);
+			this->OutputDataTable->TabIndex = 9;
 			// 
-			// task4
+			// SimilarAltitude
 			// 
-			this->task4->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->task4->Location = System::Drawing::Point(10, 174);
-			this->task4->Name = L"task4";
-			this->task4->Size = System::Drawing::Size(298, 25);
-			this->task4->TabIndex = 12;
-			this->task4->Text = L"Distance amplitude of lost drones";
-			this->task4->UseVisualStyleBackColor = true;
-			this->task4->Click += gcnew System::EventHandler(this, &MyForm::task4_Click);
+			this->SimilarAltitude->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->SimilarAltitude->Location = System::Drawing::Point(314, 246);
+			this->SimilarAltitude->Name = L"SimilarAltitude";
+			this->SimilarAltitude->Size = System::Drawing::Size(298, 25);
+			this->SimilarAltitude->TabIndex = 10;
+			this->SimilarAltitude->Text = L"Show drones with similar altitude as number";
+			this->SimilarAltitude->UseVisualStyleBackColor = true;
+			this->SimilarAltitude->Click += gcnew System::EventHandler(this, &MyForm::SimilarAltitude_Click);
 			// 
-			// numericUpDown1
+			// Task4Button
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(615, 249);
-			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(47, 20);
-			this->numericUpDown1->TabIndex = 13;
+			this->Task4Button->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->Task4Button->Location = System::Drawing::Point(10, 174);
+			this->Task4Button->Name = L"Task4Button";
+			this->Task4Button->Size = System::Drawing::Size(298, 25);
+			this->Task4Button->TabIndex = 12;
+			this->Task4Button->Text = L"Distance amplitude of lost drones";
+			this->Task4Button->UseVisualStyleBackColor = true;
+			this->Task4Button->Click += gcnew System::EventHandler(this, &MyForm::Task4Button_Click);
 			// 
-			// task5button
+			// Task3Number
 			// 
-			this->task5button->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->task5button->Location = System::Drawing::Point(10, 210);
-			this->task5button->Name = L"task5button";
-			this->task5button->Size = System::Drawing::Size(298, 25);
-			this->task5button->TabIndex = 14;
-			this->task5button->Text = L"Operators with the best result of a single model";
-			this->task5button->UseVisualStyleBackColor = true;
-			this->task5button->Click += gcnew System::EventHandler(this, &MyForm::task5button_Click);
+			this->Task3Number->Location = System::Drawing::Point(615, 249);
+			this->Task3Number->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->Task3Number->Name = L"Task3Number";
+			this->Task3Number->Size = System::Drawing::Size(47, 20);
+			this->Task3Number->TabIndex = 13;
 			// 
-			// removeDrone
+			// Task5Button
 			// 
-			this->removeDrone->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->removeDrone->Location = System::Drawing::Point(700, 246);
-			this->removeDrone->Name = L"removeDrone";
-			this->removeDrone->Size = System::Drawing::Size(298, 25);
-			this->removeDrone->TabIndex = 15;
-			this->removeDrone->Text = L"Delete drone with number";
-			this->removeDrone->UseVisualStyleBackColor = true;
-			this->removeDrone->Click += gcnew System::EventHandler(this, &MyForm::removeDrone_Click);
+			this->Task5Button->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->Task5Button->Location = System::Drawing::Point(10, 210);
+			this->Task5Button->Name = L"Task5Button";
+			this->Task5Button->Size = System::Drawing::Size(298, 25);
+			this->Task5Button->TabIndex = 14;
+			this->Task5Button->Text = L"Operators with the best result of a single model";
+			this->Task5Button->UseVisualStyleBackColor = true;
+			this->Task5Button->Click += gcnew System::EventHandler(this, &MyForm::Task5Button_Click);
 			// 
-			// numericUpDown2
+			// RemoveDroneButton
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(1001, 249);
-			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
-			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(47, 20);
-			this->numericUpDown2->TabIndex = 16;
+			this->RemoveDroneButton->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->RemoveDroneButton->Location = System::Drawing::Point(700, 246);
+			this->RemoveDroneButton->Name = L"RemoveDroneButton";
+			this->RemoveDroneButton->Size = System::Drawing::Size(298, 25);
+			this->RemoveDroneButton->TabIndex = 15;
+			this->RemoveDroneButton->Text = L"Delete drone with number";
+			this->RemoveDroneButton->UseVisualStyleBackColor = true;
+			this->RemoveDroneButton->Click += gcnew System::EventHandler(this, &MyForm::RemoveDroneButton_Click);
 			// 
-			// button6
+			// RemoveDroneNumber
 			// 
-			this->button6->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
-			this->button6->Location = System::Drawing::Point(10, 246);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(298, 25);
-			this->button6->TabIndex = 17;
-			this->button6->Text = L"Drones with the best speed of a single model";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			this->RemoveDroneNumber->Location = System::Drawing::Point(1001, 249);
+			this->RemoveDroneNumber->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->RemoveDroneNumber->Name = L"RemoveDroneNumber";
+			this->RemoveDroneNumber->Size = System::Drawing::Size(47, 20);
+			this->RemoveDroneNumber->TabIndex = 16;
+			// 
+			// Task2Button
+			// 
+			this->Task2Button->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F));
+			this->Task2Button->Location = System::Drawing::Point(10, 246);
+			this->Task2Button->Name = L"Task2Button";
+			this->Task2Button->Size = System::Drawing::Size(298, 25);
+			this->Task2Button->TabIndex = 17;
+			this->Task2Button->Text = L"Drones with the best speed of a single model";
+			this->Task2Button->UseVisualStyleBackColor = true;
+			this->Task2Button->Click += gcnew System::EventHandler(this, &MyForm::Task2Button_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1066, 524);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->numericUpDown2);
-			this->Controls->Add(this->removeDrone);
-			this->Controls->Add(this->task5button);
-			this->Controls->Add(this->numericUpDown1);
-			this->Controls->Add(this->task4);
-			this->Controls->Add(this->Altituderange);
-			this->Controls->Add(this->dataGridView2);
-			this->Controls->Add(this->sortdist);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->Task2Button);
+			this->Controls->Add(this->RemoveDroneNumber);
+			this->Controls->Add(this->RemoveDroneButton);
+			this->Controls->Add(this->Task5Button);
+			this->Controls->Add(this->Task3Number);
+			this->Controls->Add(this->Task4Button);
+			this->Controls->Add(this->SimilarAltitude);
+			this->Controls->Add(this->OutputDataTable);
+			this->Controls->Add(this->SortByDistanceButton);
+			this->Controls->Add(this->SortBySpeedButton);
+			this->Controls->Add(this->ClearDataButton);
+			this->Controls->Add(this->ExitButton);
+			this->Controls->Add(this->LogBox);
+			this->Controls->Add(this->GetDronesButton);
+			this->Controls->Add(this->ShowDronesButton);
+			this->Controls->Add(this->InputDataTable);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->InputDataTable))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->OutputDataTable))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Task3Number))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RemoveDroneNumber))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+// Функція, що повертає список дронів з схожою висотою польоту
 private: vector<Drone> AlmostSameAltitude(vector<Drone> drones,Drone current,double procent){
 	vector<Drone> similarDrones;
 	for (int i = 0; i < drones.size(); i++) {
@@ -352,36 +355,41 @@ private: vector<Drone> AlmostSameAltitude(vector<Drone> drones,Drone current,dou
 	}
 	return similarDrones;
 }
+// Функція що поветрає список дронів які успішно повернулися
 private: vector<Drone> SuccessfullyCameBackDrones(vector<Drone> drones) {
-	vector<Drone> newdrones;
+	vector<Drone> SuccessfullDrones;
 	for (int i = 0; i < drones.size(); i++) {
 		if (drones[i].m_sStatus == "Success" || drones[i].m_sStatus == "success") {
-			newdrones.push_back(drones[i]);
+			SuccessfullDrones.push_back(drones[i]);
 		}
 	}
-	return newdrones;
+	return SuccessfullDrones;
 }
+// Функція що поветрає список дронів які були втрачені
 private: vector<Drone> LostDrones(vector<Drone> drones) {
-	vector<Drone> newdrones;
+	vector<Drone> LostDrones;
 	for (int i = 0; i < drones.size(); i++) {
 		if (drones[i].m_sStatus == "Lost" || drones[i].m_sStatus == "lost") {
-			newdrones.push_back(drones[i]);
+			LostDrones.push_back(drones[i]);
 		}
 	}
-	return newdrones;
+	return LostDrones;
 }
-private: double avarageDistance(vector<Drone> drones){
+// Функція що поветрає середнє значення дистанції із списку дронів
+private: double AvarageDistance(vector<Drone> drones){
+	double dAvarageDistance = 0;
 	if (!drones.size())
-		return 0;
-	double avarage=0;
+		return dAvarageDistance;
 	for (int i = 0; i < drones.size(); i++) {
-		avarage += drones[i].m_dFlight_Distance;
+		dAvarageDistance += drones[i].m_dFlight_Distance;
 	}
-	return avarage/drones.size();
+	return dAvarageDistance /drones.size();
 }
+// Функція конвертування стрічки з .Net в стрічку з std
 private: std::string StringTostring(System::String^ str) {
 	return (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(str)).ToPointer();
 }
+// Функція перевірки чи стрічка є числом
 private: bool is_number(const string& s)
 {
 	string::const_iterator it = s.begin();
@@ -389,6 +397,7 @@ private: bool is_number(const string& s)
 		++it;
 	return !s.empty() && it == s.end();
 }
+// Функція створення таблиці
 private: DataTable^ CreateColumns() {
 	DataTable^ table = gcnew DataTable();
 	table->Columns->Add("Number");
@@ -400,24 +409,20 @@ private: DataTable^ CreateColumns() {
 	table->Columns->Add("Status");
 	return table;
 }
+// Функція сортування списку дронів за швидкістю
 private: void Sort_By_Speed(vector<Drone>& drones)
 {
 	int i, j, max;
-	// One by one move boundary of unsorted subarray  
 	for (i = 0; i < drones.size() - 1; i++)
 	{
-		// Find the minimum element in unsorted array  
 		max = i;
 		for (j = i + 1; j < drones.size(); j++)
 			if (drones[j].m_dSpeed > drones[max].m_dSpeed)
 				max = j;
-
-		// Swap the found minimum element with the first element  
-		Drone temp = drones[max];
-		drones[max] = drones[i];
-		drones[i] = temp;
+		swap(drones[i], drones[max]);
 	}
 }
+// Функція сортування списку дронів за моделлю
 private: void Sort_By_Model(vector<Drone>& drones)
 {
 	int i, j, max;
@@ -427,11 +432,10 @@ private: void Sort_By_Model(vector<Drone>& drones)
 		for (j = i + 1; j < drones.size(); j++)
 			if (drones[j].m_sModel.compare(drones[max].m_sModel) < 0)
 				max = j;
-		Drone temp = drones[max];
-		drones[max] = drones[i];
-		drones[i] = temp;
+		swap(drones[i], drones[max]);
 	}
 }
+// Функція сортування списку дронів за оператором
 private: void Sort_By_Operator(vector<Drone>& drones)
 {
 	int i, j, max;
@@ -441,25 +445,55 @@ private: void Sort_By_Operator(vector<Drone>& drones)
 		for (j = i + 1; j < drones.size(); j++)
 			if (drones[j].m_sOperator.compare(drones[max].m_sOperator) < 0)
 				max = j;
-		Drone temp = drones[max];
-		drones[max] = drones[i];
-		drones[i] = temp;
+		swap(drones[i], drones[max]);
 	}
 }
+// Функція сортування списку дронів за дистанцією
 private: void Sort_By_Distance(vector<Drone>& drones)
 {
-   int i, j, max;
-   for (i = 0; i < drones.size() - 1; i++)
-   {
-	   max = i;
-	   for (j = i + 1; j < drones.size(); j++)
-		   if (drones[j].m_dFlight_Distance > drones[max].m_dFlight_Distance)
-			   max = j;
-	   Drone temp = drones[max];
-	   drones[max] = drones[i];
-	   drones[i] = temp;
-   }
+	if (drones.size() == 1)
+		return;
+    int i, j, max;
+    for (i = 0; i < drones.size() - 1; i++)
+    {
+	    max = i;
+	    for (j = i + 1; j < drones.size(); j++)
+		    if (drones[j].m_dFlight_Distance > drones[max].m_dFlight_Distance)
+			    max = j;
+	    swap(drones[i], drones[max]);
+    }
 }
+// Функція зчитування списку дронів з таблиці виводу
+private: int GetDrones(vector<Drone>& drones) {
+	vector<Drone> TempDrones;
+	for (int i = 0; i < OutputDataTable->RowCount - 1; i++) {
+		try {
+			if (!is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((OutputDataTable[0, i]->Value->ToString()))).ToPointer())
+				|| !is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((OutputDataTable[3, i]->Value->ToString()))).ToPointer())
+				|| !is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((OutputDataTable[4, i]->Value->ToString()))).ToPointer())
+				|| !is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((OutputDataTable[5, i]->Value->ToString()))).ToPointer()))
+				throw i + 1;
+			TempDrones.push_back(Drone(System::Convert::ToInt32(OutputDataTable[0, i]->Value),
+				(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((OutputDataTable[1, i]->Value->ToString()))).ToPointer(),
+				(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((OutputDataTable[2, i]->Value->ToString()))).ToPointer(),
+				System::Convert::ToDouble(OutputDataTable[3, i]->Value),
+				System::Convert::ToDouble(OutputDataTable[4, i]->Value),
+				System::Convert::ToDouble(OutputDataTable[5, i]->Value),
+				(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((OutputDataTable[6, i]->Value->ToString()))).ToPointer()
+			));
+		}
+		catch (int e) {
+			MessageBox::Show(System::Convert::ToString("Enter correct data in a row " + System::Convert::ToString(e)),
+				System::Convert::ToString("Warning"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Warning);
+			return 0;
+		}
+	}
+	drones = TempDrones;
+	return 1;
+}
+// Функція що повертає створену таблицю зі списком дронів
 private: DataTable^ ShowDrones(vector<Drone> drones) {
 	DataTable^ table = gcnew DataTable();
 	table = CreateColumns();
@@ -475,288 +509,312 @@ private: DataTable^ ShowDrones(vector<Drone> drones) {
 	}
 	return table;
 }
-private: System::Void openToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція зчитування списку дронів з файлу
+private: System::Void OpenMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	OpenFileDialog^ ofd = gcnew OpenFileDialog();
-	vector<Drone> newdrones;
 	ofd->Filter = "Text File|*.txt|CSV File|*.csv";
 	if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 	{
 		try {
 		fstream fs;
 		fs.open(StringTostring(ofd->FileName));
-		if (!fs.is_open()) {
-			throw(1);
-		}
-		textBox1->Text = "File is opened";
+		if (!fs.is_open())
+			throw 1;
+		LogBox->Text = "File is opened";
+		MainDrones.clear();
 		while (!fs.eof()) {
 			Drone temp;
 			fs >> temp;
-			newdrones.push_back(temp);
+			MainDrones.push_back(temp);
 		}
 		fs.close();
-		MainDrones = newdrones;
 		}
 		catch (int error) {
-			textBox1->Text = "Cannot open file";
-			MessageBox::Show(System::Convert::ToString("Data in file is incorrect"));
+			LogBox->Text = "Cannot open file";
+			MessageBox::Show(System::Convert::ToString("Cannot open file"),
+				System::Convert::ToString("Error"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Error);
 		}
 	}
-
 }
-private: System::Void saveAsTxtToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	vector<Drone> newdrones;
-	for (int i = 0; i < dataGridView2->RowCount-1; i++) {
-		newdrones.push_back(Drone(System::Convert::ToInt32(dataGridView2[0, i]->Value),
-			(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView2[1, i]->Value->ToString()))).ToPointer(),
-			(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView2[2, i]->Value->ToString()))).ToPointer(),
-			System::Convert::ToDouble(dataGridView2[3, i]->Value),
-			System::Convert::ToDouble(dataGridView2[4, i]->Value),
-			System::Convert::ToDouble(dataGridView2[5, i]->Value),
-			(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[6, i]->Value->ToString()))).ToPointer()
-		));
-	}
-
+// Функція запису списку дронів у файл
+private: System::Void SaveAsMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	SaveFileDialog^ sfd = gcnew SaveFileDialog();
-
 	sfd->Filter = "Text File|*.txt|CSV File|*.csv|Any File|*.*";
-	
 	if (sfd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 	{
 		ofstream fs;
 		fs.open(StringTostring(sfd->FileName));
 		if (fs.is_open()) {
-			textBox1->Text = "Output file is opened\r\n";
-			for (int i = 0; i < newdrones.size() - 1; i++) {
-				fs << newdrones[i] << endl;
+			LogBox->Text = "Output file is opened\r\n";
+			for (int i = 0; i < MainDrones.size() - 1; i++) {
+				fs << MainDrones[i] << endl;
 			}
-			fs << newdrones[newdrones.size() - 1];
+			fs << MainDrones[MainDrones.size() - 1];
 			fs.close();
-			textBox1->Text += "Data is saved";
+			LogBox->Text += "Data is saved";
 		}
 		else {
-			textBox1->Text = "Output file is not opened ";
+			LogBox->Text = "Output file is not opened ";
 		}
 	}
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	dataGridView1->DataSource = ShowDrones(MainDrones);
-	dataGridView2->DataSource = ShowDrones(MainDrones);
-	textBox1->Text = "Drones count: " + System::Convert::ToString(MainDrones.size())+"\r\n";
+// Функція виводу списку дронів на вхідну та вихідну таблиці
+private: System::Void ShowDronesButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	InputDataTable->DataSource = ShowDrones(MainDrones);
+	OutputDataTable->DataSource = ShowDrones(MainDrones);
+	LogBox->Text = "Drones count: " + System::Convert::ToString(MainDrones.size())+"\r\n";
 }
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	vector<Drone> newdrones;
-	for (int i = 0; i < dataGridView1->RowCount-1; i++) {
-		try {
-			if (!is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[0, i]->Value->ToString()))).ToPointer())
-				|| !is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[3, i]->Value->ToString()))).ToPointer())
-				|| !is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[4, i]->Value->ToString()))).ToPointer())
-				|| !is_number((const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[5, i]->Value->ToString()))).ToPointer())){
-				throw 1;
-			}
-			newdrones.push_back(Drone(System::Convert::ToInt32(dataGridView1[0, i]->Value),
-				(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[1, i]->Value->ToString()))).ToPointer(),
-				(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[2, i]->Value->ToString()))).ToPointer(),
-				System::Convert::ToDouble(dataGridView1[3, i]->Value),
-				System::Convert::ToDouble(dataGridView1[4, i]->Value),
-				System::Convert::ToDouble(dataGridView1[5, i]->Value),
-				(const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi((dataGridView1[6, i]->Value->ToString()))).ToPointer()
-			));
-		}
-		catch (int e) {
-			MessageBox::Show(System::Convert::ToString("Enter correct data"));
-		}
+// Функція зчитування списку дронів з таблиці та виводу відповідних повідомлень
+private: System::Void GetDronesButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+		if (!GetDrones(MainDrones))
+			throw 1;
+		LogBox->Text = "Drones count: " + System::Convert::ToString(MainDrones.size()) + "\r\n" +
+			"Drones are saved\r\n";
 	}
-	MainDrones = newdrones;
-	textBox1->Text = "Drones count: " + System::Convert::ToString(MainDrones.size())+"\r\n"+
-		"Drones are saved\r\n";
+	catch (int e) {
+		MessageBox::Show(System::Convert::ToString("Data is not correct"),
+			System::Convert::ToString("Error"),
+			System::Windows::Forms::MessageBoxButtons::OK,
+			System::Windows::Forms::MessageBoxIcon::Error);
+	}
 }
+// Функція заповнення таблиць при запуску програми
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	DataTable^ table = gcnew DataTable();
 	table = CreateColumns();
-	dataGridView1->DataSource = table;
-	dataGridView2->DataSource = table;
+	InputDataTable->DataSource = table;
+	OutputDataTable->DataSource = table;
 }
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція виходу з програми
+private: System::Void ExitButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	Close();
 }
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	dataGridView1->Columns->Clear();
-	dataGridView2->Columns->Clear();
+// Функція очищення даних з таблиць та списку
+private: System::Void ClearDataButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	InputDataTable->Columns->Clear();
+	OutputDataTable->Columns->Clear();
 	DataTable^ table = gcnew DataTable();
 	table = CreateColumns();
-	dataGridView1->DataSource = table;
-	dataGridView2->DataSource = table;
+	InputDataTable->DataSource = table;
+	OutputDataTable->DataSource = table;
 	MainDrones.clear();
-	textBox1->Text = "Data is cleared";
+	LogBox->Text = "Data is cleared";
 }
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція сортування списку дронів за швидкістю та виводу відповідних повідомлень
+private: System::Void SortBySpeedButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
 		if (!MainDrones.size()) {
 			throw 1;
 		}
 		Sort_By_Speed(MainDrones);
-		dataGridView2->DataSource = ShowDrones(MainDrones);
-		textBox1->Text = "Drones are sorted by speed\r\n";
+		OutputDataTable->DataSource = ShowDrones(MainDrones);
+		LogBox->Text = "Drones are sorted by speed\r\n";
 	}
 	catch (int e) {
-		MessageBox::Show(System::Convert::ToString("There's nothing to sort"));
+		MessageBox::Show(System::Convert::ToString("There's nothing to sort"),
+			System::Convert::ToString("Warning"),
+			System::Windows::Forms::MessageBoxButtons::OK,
+			System::Windows::Forms::MessageBoxIcon::Warning);
 	}
 }
-private: System::Void sortdist_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція сортування списку дронів за дистанцією та виводу відповідних повідомлень
+private: System::Void SortByDistanceButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
 		if (!MainDrones.size()) {
-			throw(-1);
+			throw 1;
 		}
 		Sort_By_Distance(MainDrones);
-		dataGridView2->DataSource = ShowDrones(MainDrones);
-		textBox1->Text = "Drones are sorted by distance";
+		OutputDataTable->DataSource = ShowDrones(MainDrones);
+		LogBox->Text = "Drones are sorted by distance";
 	}
 	catch (int e) {
-		MessageBox::Show(System::Convert::ToString("There's nothing to sort"));
+		MessageBox::Show(System::Convert::ToString("There's nothing to sort"),
+			System::Convert::ToString("Warning"),
+			System::Windows::Forms::MessageBoxButtons::OK,
+			System::Windows::Forms::MessageBoxIcon::Warning);
 	}
 }
-private: System::Void Altituderange_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція що виводить на таблицю виводу список дронів з приблизно однаковою висотою польоту
+// з відхиленням 7.359%
+private: System::Void SimilarAltitude_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-		double procent = 7.359;
-		if (!numericUpDown1->Text)
+		double dProcent = 7.359;
+		if (!Task3Number->Text)
 			throw 1;
-		int droneNumber = System::Convert::ToInt32(numericUpDown1->Text);
-		if (droneNumber<1)
+		int iDroneNumber = System::Convert::ToInt32(Task3Number->Text);
+		if (iDroneNumber < 1)
 			throw 2;
-		Drone temp=Drone();
+		Drone TempDrone = Drone();
 		for (int i = 0; i < MainDrones.size(); i++) {
-			if (MainDrones[i].m_iNumber == droneNumber) {
-				temp = MainDrones[i];
+			if (MainDrones[i].m_iNumber == iDroneNumber) {
+				TempDrone = MainDrones[i];
 				break;
 			}
 		}
-		if (!temp.m_iNumber)
+		if (!TempDrone.m_iNumber)
 			throw 3;
-		textBox1->Text = "Altitude range: " + "\r\n["+System::Convert::ToString(temp.m_dFlight_Altitude* (1 - procent / 100))+
-			"; "+System::Convert::ToString(temp.m_dFlight_Altitude * (1 + procent / 100))+"]";
-		dataGridView2->DataSource = ShowDrones(AlmostSameAltitude(MainDrones, temp, procent));
+		LogBox->Text = "Altitude range: " + "\r\n["+System::Convert::ToString(TempDrone.m_dFlight_Altitude* (1 - dProcent / 100))+
+			"; "+System::Convert::ToString(TempDrone.m_dFlight_Altitude * (1 + dProcent / 100))+"]";
+		OutputDataTable->DataSource = ShowDrones(AlmostSameAltitude(MainDrones, TempDrone, dProcent));
 	}
 	catch (int e) {
 		switch(e){
 		case 1:
-			MessageBox::Show(System::Convert::ToString("Enter number of drone"));
+			MessageBox::Show(System::Convert::ToString("Enter number of drone"),
+				System::Convert::ToString("Error"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Error);
 			break;
 		case 2:
-			MessageBox::Show(System::Convert::ToString("Not correct range"));
+			MessageBox::Show(System::Convert::ToString("Not correct range"),
+				System::Convert::ToString("Error"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Error);
 			break;
 		case 3:
-			MessageBox::Show(System::Convert::ToString("Drone hasn't been found"));
+			MessageBox::Show(System::Convert::ToString("Drone hasn't been found"),
+				System::Convert::ToString("Error"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Error);
 			break;
 		default:
-			MessageBox::Show(System::Convert::ToString("Unknown error"));
+			MessageBox::Show(System::Convert::ToString("Unknown error"),
+				System::Convert::ToString("Error"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Error);
 		}
 	}
 }
-private: System::Void dronenum_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void task4_Click(System::Object^ sender, System::EventArgs^ e) {
-	double avarage = round(avarageDistance(MainDrones));
-	vector<Drone> task4drones = LostDrones(MainDrones);
-	textBox1->Text = "Operators that lost their drone and the difference between their distance result and avarage\r\n";
-	textBox1->Text += "Avarage Distance: " + System::Convert::ToString(avarage) + "\r\n";
-	for (int i = 0; i < task4drones.size(); i++) {
-		textBox1->Text +=gcnew System::String(task4drones[i].m_sOperator.c_str())+"\t"+
-			System::Convert::ToString(task4drones[i].m_dFlight_Distance-avarage)+"\r\n";
+// Функція що визначиє середній результат дистанція та виводить операторів, у яких результат статус - втрачено,
+// визначає та виводить відхилення їх результату статус від середнього значення
+private: System::Void Task4Button_Click(System::Object^ sender, System::EventArgs^ e) {
+	double dAvarage = round(AvarageDistance(MainDrones));
+	vector<Drone> Task4Drones = LostDrones(MainDrones);
+	LogBox->Text = "Operators that lost their drone and the difference between their distance result and avarage\r\n";
+	LogBox->Text += "Avarage Distance: " + System::Convert::ToString(dAvarage) + "\r\n";
+	for (int i = 0; i < Task4Drones.size(); i++) {
+		LogBox->Text +=gcnew System::String(Task4Drones[i].m_sOperator.c_str())+"\t"+
+			System::Convert::ToString(Task4Drones[i].m_dFlight_Distance-dAvarage)+"\r\n";
 	}
-	dataGridView2->DataSource = ShowDrones(task4drones);
+	OutputDataTable->DataSource = ShowDrones(Task4Drones);
 }
-private: System::Void task5button_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція що виводить операторів, у яких загальний результат буде найкращим 
+// (серед тих, які управляють однаковою моделлю дрона)
+private: System::Void Task5Button_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (MainDrones.size()) {
-		textBox1->Text = "Operators that have best result (distance/speed) of a single model\r\n";
-		textBox1->Text += "Operators:\r\n";
-		vector<Drone> task5drones;
-		task5drones = MainDrones;
-		Sort_By_Model(task5drones);
-		vector<Drone> result;
-		Drone best = task5drones[0];
-		for (int i = 1; i < task5drones.size(); i++)
+		LogBox->Text = "Operators that have the best result (distance/speed) of a single model\r\n";
+		LogBox->Text += "Operators:\r\n";
+		vector<Drone> Task5Drones;
+		Task5Drones = MainDrones;
+		Sort_By_Model(Task5Drones);
+		vector<Drone> ResultDrones;
+		Drone BestDrone = Task5Drones[0];
+		for (int i = 1; i < Task5Drones.size(); i++)
 		{
-			if (best.m_sModel.compare(task5drones[i].m_sModel) == 0) {
-				if ((task5drones[i].m_dFlight_Distance / 1000) / task5drones[i].m_dSpeed <
-					(best.m_dFlight_Distance / 1000) / best.m_dSpeed) {
-					best = task5drones[i];
+			if (BestDrone.m_sModel.compare(Task5Drones[i].m_sModel) == 0) {
+				if ((Task5Drones[i].m_dFlight_Distance / 1000) / Task5Drones[i].m_dSpeed <
+					(BestDrone.m_dFlight_Distance / 1000) / BestDrone.m_dSpeed) {
+					BestDrone = Task5Drones[i];
 				}
 			}
 			else {
-				textBox1->Text += gcnew System::String(best.m_sOperator.c_str()) + "\r\n";
-				result.push_back(best);
-				best = task5drones[i];
+				LogBox->Text += gcnew System::String(BestDrone.m_sOperator.c_str()) + "\r\n";
+				ResultDrones.push_back(BestDrone);
+				BestDrone = Task5Drones[i];
 			}
 		}
-		textBox1->Text += gcnew System::String(best.m_sOperator.c_str()) + "\r\n";
-		result.push_back(best);
-		dataGridView2->DataSource = ShowDrones(result);
+		LogBox->Text += gcnew System::String(BestDrone.m_sOperator.c_str()) + "\r\n";
+		ResultDrones.push_back(BestDrone);
+		OutputDataTable->DataSource = ShowDrones(ResultDrones);
 	}
 }
-private: System::Void removeDrone_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція що видаляє вказаний дрон зі списку
+private: System::Void RemoveDroneButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-		if (!numericUpDown2->Text)
+		if (!RemoveDroneNumber->Text)
 			throw 1;
-		int droneNumber = System::Convert::ToInt32(numericUpDown2->Text);
-		if (droneNumber<1)
+		int iDroneNumber = System::Convert::ToInt32(RemoveDroneNumber->Text);
+		if (iDroneNumber<1)
 			throw 2;
-		bool erase = false;
+		bool bErase = false;
 		for (int i = 0; i < MainDrones.size(); i++) {
-			if (MainDrones[i].m_iNumber == droneNumber) {
+			if (MainDrones[i].m_iNumber == iDroneNumber) {
 				MainDrones.erase(MainDrones.begin() + i);
-				erase = true;
+				bErase = true;
 			}
 		}
-		if (!erase) {
+		if (!bErase) {
 			throw 3;
 		}
-		dataGridView1->DataSource = ShowDrones(MainDrones);
-		dataGridView2->DataSource = ShowDrones(MainDrones);
-		textBox1->Text = "Drones count: " + System::Convert::ToString(MainDrones.size()) +
-			"\r\n"+"Drone number " + System::Convert::ToString(droneNumber) + " has been deleted\r\n";
+		InputDataTable->DataSource = ShowDrones(MainDrones);
+		OutputDataTable->DataSource = ShowDrones(MainDrones);
+		LogBox->Text = "Drones count: " + System::Convert::ToString(MainDrones.size()) +
+			"\r\n"+"Drone number " + System::Convert::ToString(iDroneNumber) + " has been deleted\r\n";
 	}
 	catch (int e) {
 		switch (e) {
 		case 1: 
-			MessageBox::Show(System::Convert::ToString("Enter number of drone"));
+			MessageBox::Show(System::Convert::ToString("Enter number of drone"),
+				System::Convert::ToString("Warning"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Warning);
 			break;
 		case 2:
-			MessageBox::Show(System::Convert::ToString("Not correct range"));
+			MessageBox::Show(System::Convert::ToString("Not correct range"),
+				System::Convert::ToString("Error"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Error);
 			break;
 		case 3:
-			MessageBox::Show(System::Convert::ToString("This drone doesn't exist"));
+			MessageBox::Show(System::Convert::ToString("This drone doesn't exist"),
+				System::Convert::ToString("Error"),
+				System::Windows::Forms::MessageBoxButtons::OK,
+				System::Windows::Forms::MessageBoxIcon::Error);
 			break;
 		}
 	}
 }
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+// Функція що групує по моделях які мають результат статус – успішне повернення 
+// та найкраще значення – швидкість та сортує за оператором
+private: System::Void Task2Button_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (MainDrones.size()) {
-		vector<Drone> task5drones;
-		task5drones = SuccessfullyCameBackDrones(MainDrones);
-		Sort_By_Model(task5drones);
-		vector<Drone> result;
-		Drone best = task5drones[0];
-		for (int i = 1; i < task5drones.size(); i++)
-		{
-			if (best.m_sModel.compare(task5drones[i].m_sModel) == 0) {
-				if (task5drones[i].m_dSpeed > best.m_dSpeed) {
-					best = task5drones[i];
+		vector<Drone> Task2Drones;
+		vector<Drone> ResultDrones;
+		Task2Drones = SuccessfullyCameBackDrones(MainDrones);
+		if (Task2Drones.size()) {
+			Sort_By_Model(Task2Drones);
+			Drone BestDrone = Task2Drones[0];
+			for (int i = 1; i < Task2Drones.size(); i++)
+			{
+				if (BestDrone.m_sModel.compare(Task2Drones[i].m_sModel) == 0) {
+					if (Task2Drones[i].m_dSpeed > BestDrone.m_dSpeed) {
+						BestDrone = Task2Drones[i];
+					}
+				}
+				else {
+					ResultDrones.push_back(BestDrone);
+					BestDrone = Task2Drones[i];
 				}
 			}
-			else {
-				result.push_back(best);
-				best = task5drones[i];
-			}
+			ResultDrones.push_back(BestDrone);
+			Sort_By_Operator(ResultDrones);
 		}
-		result.push_back(best);
-		Sort_By_Operator(result);
-		dataGridView2->DataSource = ShowDrones(result);
-		textBox1->Text = "Drones that successfully came back and have the best speed result of a single model, sorted by operator ";
+		OutputDataTable->DataSource = ShowDrones(ResultDrones);
+		LogBox->Text = "Drones that successfully came back and have the best speed result of a single model, sorted by operator ";
 	}
+}
+// Функція що виводить інформацію про програму
+private: System::Void AboutMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show(System::Convert::ToString(
+		"The program is designed to work with drone data.\
+		It was developed in C ++ in the Microsoft Visual Studio 2019 development environment.\
+		An object-oriented programming approach is used."),
+		System::Convert::ToString("Info"),
+		System::Windows::Forms::MessageBoxButtons::OK,
+		System::Windows::Forms::MessageBoxIcon::Information);
 }
 };
 }
